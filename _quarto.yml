@@ -1,0 +1,29 @@
+project:
+  type: website
+
+website:
+  title: "dpo-marchi"
+  sidebar:
+    style: "docked"
+    search: false
+    contents:
+      - text: "О курсе"
+        href: index.qmd
+      - section: "Источники данных о территории"        
+        contents:
+          - Data-sources.qmd
+          - remote-sensing-data.qmd
+          - building-parameters.qmd
+        
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    number-sections: true
+    number-depth: 3
+    shift-heading-level-by: 1
+    anchor-sections: true
+    link-external-icon: true
+
+editor: visual

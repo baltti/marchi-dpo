@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Открытые источники данных – dpo-marchi</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Data-sources.html">Источники данных о территории</a></li><li class="breadcrumb-item"><a href="./Data-sources.html">Открытые источники данных</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">dpo-marchi</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">О курсе</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Источники данных о территории</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Data-sources.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Открытые источники данных</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./remote-sensing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Открытые данные дистанционного зондирования</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./building-parameters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Источники данных о характеристиках застройки</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#загрузка-данных-из-openstreetmap" id="toc-загрузка-данных-из-openstreetmap" class="nav-link active" data-scroll-target="#загрузка-данных-из-openstreetmap"><span class="header-section-number">1</span> Загрузка данных из OpenStreetMap</a>
+  <ul class="collapse">
+  <li><a href="#overpass" id="toc-overpass" class="nav-link" data-scroll-target="#overpass"><span class="header-section-number">1.1</span> Сервис overpass-turbo</a></li>
+  <li><a href="#quickosm" id="toc-quickosm" class="nav-link" data-scroll-target="#quickosm"><span class="header-section-number">1.2</span> Модуль QuickOSM</a></li>
+  <li><a href="#дополнительно" id="toc-дополнительно" class="nav-link" data-scroll-target="#дополнительно"><span class="header-section-number">1.3</span> Дополнительно</a></li>
+  <li><a href="#исторические-данные-osm" id="toc-исторические-данные-osm" class="nav-link" data-scroll-target="#исторические-данные-osm"><span class="header-section-number">1.4</span> Исторические данные OSM</a></li>
+  </ul></li>
+  <li><a href="#загрузка-данных-с-wikipedia-и-wikidata5" id="toc-загрузка-данных-с-wikipedia-и-wikidata5" class="nav-link" data-scroll-target="#загрузка-данных-с-wikipedia-и-wikidata5"><span class="header-section-number">2</span> Загрузка данных с Wikipedia и WikiData</a>
+  <ul class="collapse">
+  <li><a href="#поиск-по-статьям-wikipedia" id="toc-поиск-по-статьям-wikipedia" class="nav-link" data-scroll-target="#поиск-по-статьям-wikipedia"><span class="header-section-number">2.1</span> Поиск по статьям Wikipedia</a></li>
+  <li><a href="#поиск-по-wikidata" id="toc-поиск-по-wikidata" class="nav-link" data-scroll-target="#поиск-по-wikidata"><span class="header-section-number">2.2</span> Поиск по Wikidata</a></li>
+  </ul></li>
+  <li><a href="#градостроительные-данные" id="toc-градостроительные-данные" class="nav-link" data-scroll-target="#градостроительные-данные"><span class="header-section-number">3</span> Градостроительные данные</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Data-sources.html">Источники данных о территории</a></li><li class="breadcrumb-item"><a href="./Data-sources.html">Открытые источники данных</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Открытые источники данных</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="загрузка-данных-из-openstreetmap" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="загрузка-данных-из-openstreetmap"><span class="header-section-number">1</span> Загрузка данных из OpenStreetMap</h2>
+<p><strong>OpenStreetMap (OSM)</strong> — проект, который создаёт и предоставляет свободные географические данные, дает возможность создавать карты любому пользователю. Каждый желающий может поучаствовать в проекте (загружать свои треки на сервер, дорисовывать общедоступную карту по спутниковым снимкам Bing, MapBox, DigitalGlobe (весь мир), IRS (запад России), SPOT4 (восток России) и SPOT (Белоруссия) от Космоснимки.ру, ASTER (Россия), OrbView-3 и другими) и использовать эти карты совершенно свободно, и бесплатно в отличие от многих других карт, даже бесплатных, свободное использование которых ограничено.</p>
+<p>Карты этого проекта очень широко используются как в некоммерческих целях, например, для исследовательских проектов, так и для коммерческих проектов, например, создания навигационных приложений.</p>
+<p>Вот очень любопытный <a href="http://shtosm.ru/all/vserossiyskaya-perepis-pod-ugrozoy/">прецедент</a> использования OSM в нашей стране.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Безусловно следует помнить, что OSM как источник данных весьма и весьма несовершенен, так как запооняется пользователями, однако он продалжает оставаться самым большим набором пространственных данных в мире.</p>
+</div>
+</div>
+<section id="overpass" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="overpass"><span class="header-section-number">1.1</span> Сервис overpass-turbo</h3>
+<p>Один из самых простых способов скачивания пространственных данных с OSM - это использование сервиса <a href="http://overpass-turbo.eu/" class="uri">http://overpass-turbo.eu/</a>.</p>
+<p>Есть еще вот такой <a href="https://yourmaps.io/">сервис</a> русскоязычный, но там довольно много ограничений в бесплатной версии.</p>
+<p>Подробная информация о сервисе <a href="https://wiki.openstreetmap.org/wiki/Overpass_turbo"><u>https://wiki.openstreetmap.org/wiki/Overpass_turbo</u></a></p>
+<p>Для создания запросов используется собственный язык запросов <strong>Overpass QL</strong> (Overpass Query Language)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Есть несколько различных типов <em>формулировок</em> Overpass QL . Они сгруппированы в:</p>
+<ul>
+<li><p><em>Параметры,</em> которые являются необязательными глобальными переменными, устанавливаются в первом операторе запроса. Примерами <em>настроек</em> являются тайм-аут сервера для сервера Overpass API и формат вывода запроса Overpass QL.</p></li>
+<li><p><em>Операторы блока</em> : <em>операторы</em> блока группируют операторы Overpass QL вместе.</p></li>
+<li><p><em>Автономные запросы</em>: это самостоятельные полные утверждения. Они могут выполнять такие функции, как запрос к серверу Overpass API для создания набора; манипулирование содержимым существующего набора; или отправка конечных результатов запроса в место вывода. Автономные запросы сами по себе состоят из более мелких языковых компонентов Overpass QL, таких как оценщики, фильтры и операторы.</p></li>
+</ul>
+<p>На самом деле, чтобы составить запрос вам не обязательно знать все тонкости языка запросов. Вот основные моменты, которые необходимы для запроса:</p>
+<ul>
+<li>то, как объекты обозначаются в OSM - ключ и его значение;</li>
+<li>тип объектов (не обязательно, а только, если вы хотите выгружать конкретный тип объектов - точки, линии или полигоны);</li>
+<li>охват территории поиска - bounding box (по умолчанию задается по видимой части карты в правой половине окна, но можно задать непосредственно в запросе или выбрать вручную на карте).</li>
+</ul>
+<p>Подробная информация о том, какие объекты как <a href="https://wiki.openstreetmap.org/wiki/RU:%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D1%8B_%D0%BA%D0%B0%D1%80%D1%82%D1%8B">обозначаются в OpenStreetMap</a>. На этой странице можно искать нужный вам тип объектов, чтобы составить запрос.</p>
+<p>В левой части окна будет отображаться выполняемый запрос, а в правой результаты этого запроса. По умолчанию поиск осуществляется в той области, которая отображается в правой части окна (это можно скорректировать более сложными запросами, см. справку о сервисе).</p>
+<p><img src="images/13.PNG" class="img-fluid"></p>
+<p>Для составления запросов используется помощник. Обратите внимание, что в нем сразу можно использовать логические операторы.</p>
+<p><img src="images/14.PNG" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>Для примера можно найти и загрузить данные по многоквартирным жилым домам (<em>building=apartments</em>) и основным магистральным улицам (<em>highway=primary or highway=secondary or highway=tertiary,</em> то есть центральные магистрали, основные магистрали районов и основные микрорайонные или межмикрорайонные транзитные улицы) в Санкт-Петербурге.</p>
+</blockquote>
+<p>Первый запрос по поиску жилых домов выглядит примерно так. Обратите внимание, что я убрала пункт <strong><em>node</em></strong>, чтобы у нас не производился поиск точечных объектов.</p>
+<p><img src="images/15.PNG" class="img-fluid"></p>
+<p>В результате запроса получим объекты на карте.</p>
+<blockquote class="blockquote">
+<p>По умолчанию поиск объектов производится внутри видимой области карты в правой части окна, но с помощью кнопок управления, расположенных в этой части окна вы можете выбрать, например, прямоугольную область поиска.</p>
+</blockquote>
+<p><img src="images/16.PNG" class="img-fluid"></p>
+<p>В нижнем правом углу окна видно, сколько объектов какого типа было найдено, а сколько отображено.</p>
+<p>Эспортируем результаты себе на компьютер для дальнейшей работы с ними в QGIS. Для этого нужно нажать кнопку <strong>Экспорт</strong>, после чего появится диалоговое окно экспорта.</p>
+<p><img src="images/17.PNG" class="img-fluid"></p>
+<p>Данные можно сохранить себе в формате geojson, о котором говорилось в предыдущем разделе @ref(formats), кроме этого формата данные также можно скачать в GPX, KML, в виде сырых данных, а также в виде данных для редактирования OSM.</p>
+<p>Предварителльно проверим свой файл в сервисе <a href="geojson.io">geojson.io</a>.</p>
+<p>Здесь достаточно будет просто перетащить ваш файл в правую часть окна. Если с файлом все в порядке и геометрия валидна, то на карте должны отобразиться объекты, а в правой части будет структура geojson файла.</p>
+<p><img src="images/18.PNG" class="img-fluid"></p>
+<p>Откроем полученные данные в QGIS.</p>
+<p>Добавление слоя осуществляется через строку меню <strong>Слой</strong> <span class="math inline">\(\longrightarrow\)</span> <strong>Добавить слой</strong> <span class="math inline">\(\longrightarrow\)</span> <strong>Добавить векторный слой</strong>.</p>
+<p><img src="images/19.png" class="img-fluid"></p>
+<p>Далее в диалоговом окне нужно указать путь к файлу.</p>
+<p><img src="images/20.PNG" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p>На самом деле не обязательно пользоваться строкой меню и ее пунктом Слой, все то же самое можно делать через окно Браузер в левой части интерфейса. Это скорее вопрос привычки.</p>
+<p>Но нужно помнить, что процесс открытия через строку меню более контролируемый.</p>
+</blockquote>
+<p>Если вы открыли новый проект, то в нем нужно выполнить перепроецирование на лету и добавить подложку. Как это сделать было описано в @ref(basemap).</p>
+<p>В результате должно получиться что-то подобное.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/21.PNG" class="img-fluid figure-img"></p>
+<figcaption>Карта с добавленной подложкой и слоями жилых многоквартирных домов и супермаркетов</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/22.PNG" class="img-fluid figure-img"></p>
+<figcaption>Карта с добавленными слоями жилых многоквартирных домов, улиц и супермаркетами</figcaption>
+</figure>
+</div>
+<p>В таблицах атрибутов будет содержаться информация об объектах, которая внесена в OSM.</p>
+<p>Открыть таблицу атрибутов слоя можно из контекстного меню, которое открывается правым кликом на название слоя.</p>
+<p><img src="images/23.png" class="img-fluid"></p>
+<blockquote class="blockquote">
+<p><strong>Атрибуты</strong> - это те характеристики объектов, которые не являются пространственными.</p>
+</blockquote>
+<p>Таблица атрибутов открывается в отдельном окне.</p>
+<p><img src="images/24.PNG" class="img-fluid"></p>
+<p>При необходимости мы можем добавлять и удалять отдельные поля, а также осуществлять операции между полями (об этом чуть подробнее будет на следующих занятиях).<br>
+Для добавления и удаления полей нужно включить режим редактирования таблицы в ее панели инструментов (значок <img src="images/25.PNG" class="img-fluid">). После этого в панели инструментов таблицы станут активными кнопки добавления и удаления полей <img src="images/26.PNG" class="img-fluid">.</p>
+<p>При удалении полей следует просто выбрать поля, которые вы собираетесь удалить в перечне (можно выделять сразу несколько названий полей, используя кнопки Shift и CTRL).</p>
+<p>При добавлении нового поля обязательно нужно задать его имя и тип данных, которые будут в нем храниться.<br>
+</p>
+</section>
+<section id="quickosm" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="quickosm"><span class="header-section-number">1.2</span> Модуль QuickOSM</h3>
+<p>Кроме непосредственного использования сервиса можно скачивать данные OSM напрямую из QGIS с помощью модуля <strong>QuickOSM</strong>.</p>
+<p>Как устанавливать модули уже было рассказано ранее в @ref(QMS).</p>
+<p><img src="images/27.png" class="img-fluid"></p>
+<p>После установки модуля на панели инструментов появятся два значка <img src="images/28.png" class="img-fluid">, левый из которых запускает окно поиска и загрузки данных из OSM, а правый позволяет удаленно подключаться к редактированию OSM через редактор JOSM<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<p>Окно модуля по умолчанию открывается на вкладке <strong>Быстрый запрос</strong>.</p>
+<p><img src="images/29.png" class="img-fluid"></p>
+<p>Кнопка <strong>Помощью с ключами/значениями</strong> открывает страницу с документацией модуля <a href="https://docs.3liz.org/QuickOSM/" class="uri">https://docs.3liz.org/QuickOSM/</a></p>
+<p>На второй строке находятся строка выбора пресетов (<strong>Preset</strong>) - готовый запросов по поиску объектов, поэтому если вы не очень уверены в том, как какие-либо объекты обозначаются, но знаете, какие вам нужны, можно попробовать найти уже готовый запрос здесь.</p>
+<p>Сразу под этой строкой находится таблица, где вы можете выбирать конкретные ключи и их значения.</p>
+<blockquote class="blockquote">
+<p>Запрос может включать в себя сразу несколько пар ключ/значение, но в этом случае части запроса должны быть связаны одним из логических операторов <strong><em>AND</em></strong> или <strong><em>OR</em></strong>.</p>
+<p>Главное отличие в применении этих операторов состоит в том, что при выборе <strong><em>AND</em></strong> поиск объектов будет осуществляться с учетом того, что все части запроса должны <em>выполняться одновременно</em>.</p>
+<p>При использовании оператора <strong><em>OR</em></strong> будет производится поиск объектов, <em>удовлетворяющих хотя бы одному условию из заданных</em>.</p>
+</blockquote>
+<p>Сразу под таблицей необходимо задать область поиска:</p>
+<p><img src="images/30.png" class="img-fluid"></p>
+<ul>
+<li><p><strong>В</strong> - поиск в заданном населенном пункте;</p></li>
+<li><p><strong>Вокруг</strong> - поиск в заданном радиусе вокруг населенного пункта;</p></li>
+<li><p><strong>Покрывать холст</strong> - поиск в пределах видимой в основном окне программы части карты;</p></li>
+<li><p><strong>Покрывать слой</strong> - поиск в пределах охвата конкретного слоя (необходимо выбрать нужный слой);</p></li>
+<li><p><strong>Не пространственные</strong> - не заданная конкретная область, поэтому поиск будет производиться во всех данных OSM вне зависимости от местоположения.</p></li>
+</ul>
+<p>Свой запрос вы можете сохранить в виде пресета (<strong>Save query in a new preset</strong>), просмотреть его (<strong>Показать запрос</strong>) и <strong>Выполнить запрос</strong>.</p>
+<p>При нажатии на кнопку <strong>Показать запрос</strong> у вас откроется вкладка <strong>Запрос</strong>, где текст вашего запроса будет показан на языке запросов Overpass аналогично тому, как было рассмотрено выше в @ref(overpass).</p>
+<p><img src="images/31.png" class="img-fluid"></p>
+<p>При желании, запрос можно писать прямо здесь.</p>
+<p>В пункте <strong>Query history</strong> на вкладке <strong>Быстрый запрос</strong> у вас будут отображаться уже сделанные вами запросы.</p>
+<p>В дополнительных настройках быстрого запроса можно указать:</p>
+<p><img src="images/32.png" class="img-fluid"></p>
+<ul>
+<li><p>тип объекта для поиска;</p></li>
+<li><p>время ожидания при выполнении запроса;</p></li>
+<li><p>путь к папке для сохранения результатов запроса и формат сохранения данных, а также префикс файла для более простой идентификации.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>!NB</strong> по умолчанию результаты запроса сохраняются во <em>временные слои</em>, обозначенные значком <img src="images/33.png" class="img-fluid"></p>
+<p>Эти слои <em>существуют только во время текущего сеанса работы</em>, так что если вы планируете работать с ними далее, то их необходимо сохранить. Сделать это можно, кликнув правой кнопкой мыши на название слоя и выбрав пункт <strong>Сохранить на диск</strong> или <strong>Экспорт — Сохранить объекты как…</strong></p>
+<p><img src="images/34.png" class="img-fluid"></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Также обратите внимание, что по одному и тому же запросу могут возвращаться объекты с разными типами геометрии, причем каждый из этих типов сохраняется в отдельный слой.</p>
+</blockquote>
+<p>На вкладке <strong>Map preset</strong> вы увидите существующий по умолчанию в модуле пресет Urban, а также свои сохраненные в виде пресетов запросы.</p>
+<p><img src="images/35.png" class="img-fluid"></p>
+<p>Вкладка <strong>OSM файл</strong> позволяет загружать сырые данные из OSM для их редактирования.</p>
+<p>В <strong>Параметрах</strong> вы можете выбрать конкретный сервер Overpass для соединения и сервер Nominatim<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p><img src="images/36.png" class="img-fluid"></p>
+<p>Если запросы осуществляются слишком медленно или не осуществляются вообще, выбор другого сервера может помочь решить эту проблему.</p>
+</section>
+<section id="дополнительно" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="дополнительно"><span class="header-section-number">1.3</span> Дополнительно</h3>
+<p>Кроме непосредственного использования Overpass можно воспользоваться <strong>OSM-GPT</strong> - сервисом на основе ChatGPT, который позволяет делать запросы с использованием естественного языка.</p>
+<p><a href="https://osm-gpt.rohitgautam.com.np/" class="uri">https://osm-gpt.rohitgautam.com.np/</a></p>
+<video width="540" height="360" controls="">
+  <source src="images/255709707-f43a7a5e-3780-4421-a007-96afe55c683c.mp4" type="video/mp4">
+</video>
+<p>При желании более подробно ознакомиться с логикой построения запросов и языком запросов, вы можете воспользоваться интерактивным учебником <a href="https://osmlab.github.io/learnoverpass//en/" class="uri">https://osmlab.github.io/learnoverpass//en/</a></p>
+<p>Или взять уже готовые запросы из коллекции запросов <a href="https://osm-queries.ldodds.com/" class="uri">https://osm-queries.ldodds.com/</a></p>
+</section>
+<section id="исторические-данные-osm" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="исторические-данные-osm"><span class="header-section-number">1.4</span> Исторические данные OSM</h3>
+<p>Если вы хотите загрузить не последние актуальные данные OSM, а какие-то исторические, то самым простым способом будет загрузка данных из сервиса Geofabrik - <a href="https://download.geofabrik.de/" class="uri">https://download.geofabrik.de/</a>.</p>
+<p>На странице загрузки вы можете выбрать интересующий вас регион и скачать данные для него в формате <em>.osm.pbf</em><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (может быть добавлен в ваш проект как любой другой векторный слой) или <em>.shp.zip (</em>заархивированный shapefile).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-02 в 16.54.05.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Здесь тоже следует помнить, что, если данных не было в OSM ранее, это не значит, что этих объектов не существовало, возможно они просто были добавлены туда позднее.</p>
+</div>
+</div>
+<p>Единицы территориального деления различного уровня организованы в иерархическую структуру, то есть можно спускаться до необходимого вам уровня детализации региона.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-02 в 17.03.11.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>На каждой странице региона вы увидите пункт <em>Other formats and Auxiliary Files</em>, в котором есть пункт <em>raw directory index</em>, позволяющий перейти к архивным данным за определенные даты и загрузить их.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-02 в 17.04.56.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Любознательные и неленивые могут попробовать воспользоваться более продвинутыми инструментами:</p>
+<ul>
+<li><p><a href="https://osmcode.org/osmium-tool/">Osmium</a> и немного о работе с ним <a href="https://habr.com/ru/articles/785254/" class="uri">https://habr.com/ru/articles/785254/</a></p></li>
+<li><p><a href="https://wiki.openstreetmap.org/wiki/OSHDB">OSHDB</a> - OpenStreetMap History Data Analysis (<a href="https://github.com/giscience/oshdb">подробное описание и документация</a>)</p></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="загрузка-данных-с-wikipedia-и-wikidata5" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="загрузка-данных-с-wikipedia-и-wikidata5"><span class="header-section-number">2</span> Загрузка данных с Wikipedia и WikiData<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></h2>
+<section id="поиск-по-статьям-wikipedia" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="поиск-по-статьям-wikipedia"><span class="header-section-number">2.1</span> Поиск по статьям Wikipedia</h3>
+</section>
+<section id="поиск-по-wikidata" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="поиск-по-wikidata"><span class="header-section-number">2.2</span> Поиск по Wikidata</h3>
+<p>«<strong>Викида́нные</strong>» (англ.&nbsp;Wikidata)&nbsp;— совместно редактируемая база знаний, созданная Фондом Викимедиа. Используется для обеспечения централизованного хранения данных, которые могут использоваться в других проектах, в том числе в статьях Википедии&nbsp;— например, интервики-ссылок, значков статусных статей и списков или статистической информации: дат рождения, численности населения и&nbsp;т.&nbsp;п.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>Хранение данных основано в виде так называемых <em>утверждений (statements)</em>.</p>
+<blockquote class="blockquote">
+<p>Утверждения&nbsp;— это способ хранения любой информации об известном элементе. Формально, они состоят из пар ключ-значение, которые хранят соответствие свойства (например, «автор», или «дата публикации») с одним или несколькими значениями (например, «Артур Конан-Дойл» или «1902»).</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Wikidata_statement.svg.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Запросы осуществляются на языке подобном SQL - SparQL<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
+<p>С различными примерами составления запросов можно ознакомиться по <a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples">ссылке</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Кроме того, можете посмотреть подробное видео по работе с Wikidata (англ.) - <a href="https://youtu.be/kJph4q0Im98?si=lJLUlJR6s_wEbvbk" class="uri">https://youtu.be/kJph4q0Im98?si=lJLUlJR6s_wEbvbk</a></p>
+<p>или более краткий туториал на русском языке - <a href="https://youtu.be/t-5MyYJFmmE"><strong>https://youtu.be/t-5MyYJFmmE</strong></a></p>
+</div>
+</div>
+</section>
+</section>
+<section id="градостроительные-данные" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="градостроительные-данные"><span class="header-section-number">3</span> Градостроительные данные</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>К сожалению, в нашей стране отсутствует какой-либо каталог различных порталов градостроительных данных, которые регионы создают самостоятельно, поэтому конкретные данные для нужного региона следует искать на региональных порталах.</p>
+<p>Примеры региональных порталов:</p>
+<ul>
+<li><p>Москва <a href="https://gisogd.mos.ru/home" class="uri">https://gisogd.mos.ru/home</a></p></li>
+<li><p>Санкт-Петербург <a href="https://portal.kgainfo.spb.ru/kgamap" class="uri">https://portal.kgainfo.spb.ru/kgamap</a></p></li>
+<li><p>Ленинградская область <a href="https://gisogd.lenobl.ru/app/7/layers" class="uri">https://gisogd.lenobl.ru/app/7/layers</a></p></li>
+</ul>
+</div>
+</div>
+<p>В настоящее время есть сервис “Градостроительная проработка онлайн”</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Overpass API/Overpass QL <a href="https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL" class="uri">https://wiki.openstreetmap.org/wiki/Overpass_API/Overpass_QL</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://josm.ru/" class="uri">https://josm.ru/</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>В данном случае этот сервис нужен для осуществления геокодирования, то есть поиска положения населенного пункта по его названию<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>подробнее о формате <a href="https://wiki.openstreetmap.org/wiki/RU:PBF_Format" class="uri">https://wiki.openstreetmap.org/wiki/RU:PBF_Format</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>На основе <a href="https://gis4arch.blogspot.com/2020/11/wikipedia-wikidata.html" class="uri">https://gis4arch.blogspot.com/2020/11/wikipedia-wikidata.html</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Источник <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5" class="uri">https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D0%B8%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial" class="uri">https://www.wikidata.org/wiki/Wikidata:SPARQL_tutorial</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
