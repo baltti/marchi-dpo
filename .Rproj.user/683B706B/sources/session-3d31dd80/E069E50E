@@ -1,0 +1,31 @@
+{
+    "id": "E069E50E",
+    "path": "~/Desktop/gravity model/marchi-dpo/building-parameters.qmd",
+    "project_path": "building-parameters.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1740987017265.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "rmdVisualMode": "true",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2851:2287.5",
+        "cursorPosition": "49,0",
+        "scrollLine": "163"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1741082539,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1741082539226,
+    "read_only": false,
+    "read_only_alternatives": []
+}

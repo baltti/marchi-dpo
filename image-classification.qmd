@@ -1,0 +1,8 @@
+---
+title: "Распознавание объектов на снимках"
+format: html
+---
+
+# Модуль Semi-automatic classification plugin
+
+# Модуль от Mapflow AI
