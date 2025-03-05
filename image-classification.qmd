@@ -138,23 +138,37 @@ format: html
 
 ![](images/processing_tab.png){fig-align="center"}
 
-| **Name of the field** | **Description** | Описание |
-|----|----|----|
-| Name | Your processing name. | Имя обработки |
-| Model | User-selected item from the list of available models. | Используемая модель |
-| Status | Processing status: IN_PROGRESS, OK, FAILED. | Статус обработки |
-| Progress | The percentage of completeness of the processing. | Процент завершенности |
-| Area | The processing area (AOI). | Площадь области обработки |
-| Created | The date-time of the processing creation. | Дата обработки |
++-----------------------+-------------------------------------------------------+---------------------------+
+| **Name of the field** | **Description**                                       | Описание                  |
++=======================+=======================================================+===========================+
+| Name                  | Your processing name.                                 | Имя обработки             |
++-----------------------+-------------------------------------------------------+---------------------------+
+| Model                 | User-selected item from the list of available models. | Используемая модель       |
++-----------------------+-------------------------------------------------------+---------------------------+
+| Status                | Processing status: IN_PROGRESS, OK, FAILED.           | Статус обработки          |
++-----------------------+-------------------------------------------------------+---------------------------+
+| Progress              | The percentage of completeness of the processing.     | Процент завершенности     |
++-----------------------+-------------------------------------------------------+---------------------------+
+| Area                  | The processing area (AOI).                            | Площадь области обработки |
++-----------------------+-------------------------------------------------------+---------------------------+
+| Created               | The date-time of the processing creation.             | Дата обработки            |
++-----------------------+-------------------------------------------------------+---------------------------+
 
-| **Name of the button** | **Description** | Описание |
-|----|----|----|
-| View results | Shows the results of completed processing in QGIS layers. | Отображение результатов |
-| Delete | Deletes selected processing/processings. | Удаление обработок |
-| Save results | Saves processing results to GeoJSON file. | Сохранение результатов |
-| Download AOI | Adds processing AOI to qgis as a layer, for further work or export. | Добавление области обработки как слой |
-| See details | Shows information about processing (*Name, Status, Model, Model options, Data provider*). | Информация об обработке |
-| Rename | Renames your processing. | Переименование |
++------------------------+-------------------------------------------------------------------------------------------+---------------------------------------+
+| **Name of the button** | **Description**                                                                           | Описание                              |
++========================+===========================================================================================+=======================================+
+| View results           | Shows the results of completed processing in QGIS layers.                                 | Отображение результатов               |
++------------------------+-------------------------------------------------------------------------------------------+---------------------------------------+
+| Delete                 | Deletes selected processing/processings.                                                  | Удаление обработок                    |
++------------------------+-------------------------------------------------------------------------------------------+---------------------------------------+
+| Save results           | Saves processing results to GeoJSON file.                                                 | Сохранение результатов                |
++------------------------+-------------------------------------------------------------------------------------------+---------------------------------------+
+| Download AOI           | Adds processing AOI to qgis as a layer, for further work or export.                       | Добавление области обработки как слой |
++------------------------+-------------------------------------------------------------------------------------------+---------------------------------------+
+| See details            | Shows information about processing (*Name, Status, Model, Model options, Data provider*). | Информация об обработке               |
++------------------------+-------------------------------------------------------------------------------------------+---------------------------------------+
+| Rename                 | Renames your processing.                                                                  | Переименование                        |
++------------------------+-------------------------------------------------------------------------------------------+---------------------------------------+
 
 -   Imagery search (Поиск снимков)
 
@@ -196,5 +210,29 @@ format: html
 После обработки вы увидите результат в месте пересечения снимка и области исследования.
 
 ![](images/qgis_mosaic_results.jpg){fig-align="center"}
+
+Источники данных по умолчанию:
+
+-   [Mapbox Satellite](https://mapbox.com/maps/ssatellite) - провайдер глоабльных данных высокого размершения (нельзя выбирать изображение и дату съемки);
+
+-   **“Global mosaic”** - пробная версия мозаики снимков высокого разрешения (0,75 - 0,5 м/пиксель) для 2022 года. Охват ограничен, обновление планируется ежегодно.
+
+Также можно самостоятельно добавлять провайдеров данных во вкладке *Providers*.
+
+![](images/custom_imagery_source.png){fig-align="center"}
+
+::: callout-tip
+Как подключиться к некоторым провайдерам данных:
+
+1.  How to connect to [Openaerialmap](https://docs.mapflow.ai/userguides/howto.html#oae)
+
+2.  How to connect to [Nearmap](https://docs.mapflow.ai/userguides/howto.html#nearmap)
+:::
+
+Собственное изображение можно загрузить в формате *.GeoTIFF*.
+
+![](images/upload_tif.png){fig-align="center"}
+
+После завершения обработки результаты будут загружены в проект как векторный слой. Полученные результаты могут быть сохранены в формате *geojson*.
 
 # Модуль Semi-automatic classification plugin

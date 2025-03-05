@@ -3,7 +3,7 @@
     "path": "~/Desktop/gravity model/marchi-dpo/image-classification.qmd",
     "project_path": "image-classification.qmd",
     "type": "quarto_markdown",
-    "hash": "2144921892",
+    "hash": "3253294279",
     "contents": "",
     "dirty": false,
     "created": 1741082774535.0,
@@ -14,18 +14,18 @@
         "rmdVisualWrapConfigured": "true",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "199,0",
-        "scrollLine": "0",
+        "cursorPosition": "5,0",
+        "scrollLine": "181",
         "docOutlineVisible": "0",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "7295:9722.5"
+        "rmdVisualModeLocation": "7967:10708.5"
     },
     "folds": "",
-    "lastKnownWriteTime": 1741091931,
+    "lastKnownWriteTime": 1741178623,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1741091931597,
+    "last_content_update": 1741178623915,
     "read_only": false,
     "read_only_alternatives": []
 }
