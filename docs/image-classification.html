@@ -122,14 +122,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./remote-sensing-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Открытые данные дистанционного зондирования</span></a>
+  <a href="./building-parameters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Источники данных о характеристиках застройки</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./building-parameters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Источники данных о характеристиках застройки</span></a>
+  <a href="./remote-sensing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Открытые данные дистанционного зондирования</span></a>
   </div>
 </li>
       </ul>
@@ -144,8 +144,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#модуль-semi-automatic-classification-plugin" id="toc-модуль-semi-automatic-classification-plugin" class="nav-link active" data-scroll-target="#модуль-semi-automatic-classification-plugin"><span class="header-section-number">1</span> Модуль Semi-automatic classification plugin</a></li>
-  <li><a href="#модуль-от-mapflow-ai" id="toc-модуль-от-mapflow-ai" class="nav-link" data-scroll-target="#модуль-от-mapflow-ai"><span class="header-section-number">2</span> Модуль от Mapflow AI</a></li>
+  <li><a href="#модуль-от-mapflow-ai" id="toc-модуль-от-mapflow-ai" class="nav-link active" data-scroll-target="#модуль-от-mapflow-ai"><span class="header-section-number">1</span> Модуль от Mapflow AI</a></li>
+  <li><a href="#модуль-semi-automatic-classification-plugin" id="toc-модуль-semi-automatic-classification-plugin" class="nav-link" data-scroll-target="#модуль-semi-automatic-classification-plugin"><span class="header-section-number">2</span> Модуль Semi-automatic classification plugin</a></li>
   </ul>
 </nav>
     </div>
@@ -171,16 +171,441 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="модуль-semi-automatic-classification-plugin" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="модуль-semi-automatic-classification-plugin"><span class="header-section-number">1</span> Модуль Semi-automatic classification plugin</h2>
+<section id="модуль-от-mapflow-ai" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="модуль-от-mapflow-ai"><span class="header-section-number">1</span> Модуль от Mapflow AI</h2>
+<p><strong><em>Mapflow</em></strong> от компании GeoAlert - платформа для распознавания объектов на спутниковых снимках.</p>
+<p>Сайт платформы - <a href="https://mapflow.ai/ru" class="uri">https://mapflow.ai/ru</a></p>
+<p>На платформе реализованы модели сегментации, позволяющие распознавать на снимках:</p>
+<ul>
+<li><p>контура фундаментов зданий;</p></li>
+<li><p>различные типы лесной растительности;</p></li>
+<li><p>строительные площадки;</p></li>
+<li><p>дороги;</p></li>
+<li><p>сельскохозяйственные поля.</p></li>
+</ul>
+<p>Подробная документация по работе с модулем приведена по <a href="https://docs.mapflow.ai/api/qgis_mapflow.html">ссылке</a>.</p>
+<p>После регистрации на платформе вы можете использовать ее напрямую в браузере или с помощью одноименного модуля для QGIS.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Регистрация на платформе является обязательным условием использования сервиса, даже при работе через модуль.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-04 в 13.32.35.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>После установки значок модуля должен появиться в основной панели инструментов <img src="images/Снимок экрана 2025-03-04 в 13.32.53.png" class="img-fluid" width="47">.</p>
+<p>При первом запуске модуля вы увидите окно, в котором необходимо ввести ваш личный API токен для доступа к сервису.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/login_window_w_oauth.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Сервис не работает через прокси.</p>
+</div>
+</div>
+<p>Основное окно плагина содержит две основных панели:</p>
+<ul>
+<li><p>панель процессинга;</p></li>
+<li><p>вкладки с прочими настройками и источниками.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/main_window.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Панель процессинга позволяет настроить обработку изображений.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 54%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Name of the field / button</strong></th>
+<th><strong>Description</strong></th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Processing name</td>
+<td>Name of your processing</td>
+<td>Пользовательское название процесса</td>
+</tr>
+<tr class="even">
+<td>Area</td>
+<td>The area to be processed. This layer is automatically displayed in the drop-down list from the list of QGIS vector layers.</td>
+<td>Область для обработки</td>
+</tr>
+<tr class="odd">
+<td>Data source</td>
+<td>Base imagery to be processed. By default Mapbox is selected, in the drop-down list you can also select satellite images of the commercial providers. You can open your image through the additional options button.</td>
+<td>Источник данных для обработки. По умолчанию используется Mapbox, но доступен выбор других коммерческих провайдеров, а также вы можете открыть собственное изображение.</td>
+</tr>
+<tr class="even">
+<td>Show preview</td>
+<td>A preview of your data source or, if it is not available, an OpenStreetMap basemap</td>
+<td>Превью источника данных, при его отсутствии OpenStreetMap</td>
+</tr>
+<tr class="odd">
+<td>Use image extent</td>
+<td>This area becomes active if processing is performed on the .tif file. Allows you not to create an additional vector layer processing area for this image but takes its extent.</td>
+<td>Использовать охват изображения. Становится активным только при использовании .tif. Позволяет не создавать отдельный слой для задания области обработки, а просто использовать охват изображения.</td>
+</tr>
+<tr class="even">
+<td>Processing area</td>
+<td>Automatic calculation of the area of the selected processing area.</td>
+<td>Область обработки</td>
+</tr>
+<tr class="odd">
+<td>AI Model</td>
+<td>Processing type. In the drop-down list, you can select the following processing types (default list of processing scenarios): Building Detection, Roads Detection, Forest Detection, Forest Detection With Heights, Construction Detection, Fields Detection.</td>
+<td><p>Тип используемой модели. Список моделей по умолчанию:</p>
+<ul>
+<li><p>детекция зданий;</p></li>
+<li><p>детекция дорог;</p></li>
+<li><p>детекция лесной растительности;</p></li>
+<li><p>детекция лесной растительности с высотами древостоя;</p></li>
+<li><p>детекция стройплощадок;</p></li>
+<li><p>детекция полей.</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Your balance</td>
+<td>Remaining area available for processing</td>
+<td>Оставшееся количество кредитов для процессинга</td>
+</tr>
+<tr class="odd">
+<td>Start processing</td>
+<td>New processing start button. You will see a notification about the successful start of processing, or about incorrectly selected parameters after clicking it. It will appear in the block for displaying and working with processing after a successful start of processing.</td>
+<td>Кнопка старта обработки</td>
+</tr>
+<tr class="even">
+<td>Stars for rating</td>
+<td>Rating scores for the finished processing</td>
+<td>Рейтинг обработки</td>
+</tr>
+<tr class="odd">
+<td>Feedback field</td>
+<td>Comments about rating</td>
+<td>Комментарии</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Сервис является условно бесплатным, то есть при регистрации вы получаете 250 кредитов для обработки, после их использования можно пополнять свой баланс в личном кабинете.</p>
+<p>Стоимость обработки рассчитывается по формуле<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<p><code>Стоимость = Площадь * (Стоимость обработки + Стоимость данных)</code></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 26%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Модель</strong></th>
+<th><strong>Базовая цена</strong></th>
+<th><strong>Пост-процессинг</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Здания</td>
+<td>5</td>
+<td><div class="line-block">Классификация: 0<br>
+Симплификация: 3<br>
+Высоты зданий: 20<br>
+Склейка с OpenSteeetMap: 0</div></td>
+</tr>
+<tr class="even">
+<td>Здания (Аэрофото)</td>
+<td>25</td>
+<td><div class="line-block">Симплификация: 3</div></td>
+</tr>
+<tr class="odd">
+<td>Строительство</td>
+<td>4</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Лес</td>
+<td>8</td>
+<td>Классификация по Высотам: 20</td>
+</tr>
+<tr class="odd">
+<td>Дороги</td>
+<td>5</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>При использовании поставщиков данных по умолчанию (Mapbox, Arcgis Satellite), собственного источника TMS или загруженных изображений цена равна нулю. Если вы используете коммерческих поставщиков («Global mosaic» и другие, которые могут быть доступны), стоимость данных зависит от уровня масштабирования. Мы сотрудничаем с поставщиками данных, а это означает, что стоимость услуги зависит от платного трафика, поэтому мы масштабируем цены в зависимости от разрешения изображения для более точной модели ценообразования.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Поставщик данных</strong></th>
+<th><strong>18 zoom</strong></th>
+<th><strong>17 zoom</strong></th>
+<th><strong>16 zoom</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mapbox</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>ArcGIS WorldView</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Ваш источник</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Ваше изображение TIFF</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Global mosaic</td>
+<td>10</td>
+<td>2.5</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><em>Пример расчета стоимости обработки</em></p>
+<p><em>Я хочу обработать 3.3 кв.км данных Global Mosaic на 18 зуме использую модель Зданий</em></p>
+<p><code>Стоимость = 3.3 * (10+5) = 50 кредитов</code></p>
+</div>
+</div>
+<p>В правой части окна 5 основных вкладок:</p>
+<ul>
+<li>Processing (Обработка)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/processing_tab.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Name of the field</strong></th>
+<th><strong>Description</strong></th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Name</td>
+<td>Your processing name.</td>
+<td>Имя обработки</td>
+</tr>
+<tr class="even">
+<td>Model</td>
+<td>User-selected item from the list of available models.</td>
+<td>Используемая модель</td>
+</tr>
+<tr class="odd">
+<td>Status</td>
+<td>Processing status: IN_PROGRESS, OK, FAILED.</td>
+<td>Статус обработки</td>
+</tr>
+<tr class="even">
+<td>Progress</td>
+<td>The percentage of completeness of the processing.</td>
+<td>Процент завершенности</td>
+</tr>
+<tr class="odd">
+<td>Area</td>
+<td>The processing area (AOI).</td>
+<td>Площадь области обработки</td>
+</tr>
+<tr class="even">
+<td>Created</td>
+<td>The date-time of the processing creation.</td>
+<td>Дата обработки</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Name of the button</strong></th>
+<th><strong>Description</strong></th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>View results</td>
+<td>Shows the results of completed processing in QGIS layers.</td>
+<td>Отображение результатов</td>
+</tr>
+<tr class="even">
+<td>Delete</td>
+<td>Deletes selected processing/processings.</td>
+<td>Удаление обработок</td>
+</tr>
+<tr class="odd">
+<td>Save results</td>
+<td>Saves processing results to GeoJSON file.</td>
+<td>Сохранение результатов</td>
+</tr>
+<tr class="even">
+<td>Download AOI</td>
+<td>Adds processing AOI to qgis as a layer, for further work or export.</td>
+<td>Добавление области обработки как слой</td>
+</tr>
+<tr class="odd">
+<td>See details</td>
+<td>Shows information about processing (<em>Name, Status, Model, Model options, Data provider</em>).</td>
+<td>Информация об обработке</td>
+</tr>
+<tr class="even">
+<td>Rename</td>
+<td>Renames your processing.</td>
+<td>Переименование</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Imagery search (Поиск снимков)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Providers_tab.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li>My imagery (Мои снимки)</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/my_imagery_scenario.png" class="img-fluid figure-img"></p>
+<figcaption>Основной сценарий работы с собственными снимками</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/my_imagery_main.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/my_imagery_images.png" class="img-fluid figure-img"></p>
+<figcaption>Обработка собственных снимков</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/my_imagery_run.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li>Settings</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/settings_tab_w_projects.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li>Help</li>
+</ul>
+<p>Для начала обработки изображений необходимо выбрать интересующуя вас область. Это можно сделать несколькими способами:</p>
+<ol type="1">
+<li>создать новую область по охвату карты;</li>
+<li>добавить полигон из векторного файла;</li>
+<li>нарисовать область на карте;</li>
+<li>использовать охват снимка.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/AOI_button.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Далее следует найти подходящий снимок:</p>
+<ol type="1">
+<li>переключиться на вкладку “Imagery Search”;</li>
+<li>установить параметры поиска, включая область, период времени, облачность и процент пересечения с областью исследования;</li>
+<li>выбрать мозаику (“Product type = Mosaic”), в окне появится изображение и край конкретного снимка.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/qgis_mosaic_search.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>После обработки вы увидите результат в месте пересечения снимка и области исследования.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/qgis_mosaic_results.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
-<section id="модуль-от-mapflow-ai" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="модуль-от-mapflow-ai"><span class="header-section-number">2</span> Модуль от Mapflow AI</h2>
+<section id="модуль-semi-automatic-classification-plugin" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="модуль-semi-automatic-classification-plugin"><span class="header-section-number">2</span> Модуль Semi-automatic classification plugin</h2>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p><a href="https://ru.docs.mapflow.ai/userguides/prices.html" class="uri">https://ru.docs.mapflow.ai/userguides/prices.html</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

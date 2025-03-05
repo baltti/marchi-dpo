@@ -149,14 +149,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./remote-sensing-data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Открытые данные дистанционного зондирования</span></a>
+  <a href="./building-parameters.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Источники данных о характеристиках застройки</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./building-parameters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Источники данных о характеристиках застройки</span></a>
+  <a href="./remote-sensing-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Открытые данные дистанционного зондирования</span></a>
   </div>
 </li>
       </ul>
@@ -193,6 +193,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#данные-федерального-фонда-пространственных-данных" id="toc-данные-федерального-фонда-пространственных-данных" class="nav-link" data-scroll-target="#данные-федерального-фонда-пространственных-данных"><span class="header-section-number">5</span> Данные федерального фонда пространственных данных</a></li>
   <li><a href="#архивные-карты-городов" id="toc-архивные-карты-городов" class="nav-link" data-scroll-target="#архивные-карты-городов"><span class="header-section-number">6</span> Архивные карты городов</a></li>
+  <li><a href="#дополнительные-источники" id="toc-дополнительные-источники" class="nav-link" data-scroll-target="#дополнительные-источники"><span class="header-section-number">7</span> Дополнительные источники</a></li>
   </ul>
 </nav>
     </div>
@@ -233,7 +234,7 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Безусловно следует помнить, что OSM как источник данных весьма и весьма несовершенен, так как запооняется пользователями, однако он продалжает оставаться самым большим набором пространственных данных в мире.</p>
+<p>Безусловно следует помнить, что OSM как источник данных весьма и весьма несовершенен, так как заполняется пользователями, однако он продолжает оставаться самым большим набором пространственных данных в мире.</p>
 </div>
 </div>
 <section id="overpass" class="level3" data-number="1.1">
@@ -285,7 +286,7 @@ Caution
 <p>На самом деле не обязательно пользоваться строкой меню и ее пунктом Слой, все то же самое можно делать через окно Браузер в левой части интерфейса. Это скорее вопрос привычки.</p>
 <p>Но нужно помнить, что процесс открытия через строку меню более контролируемый.</p>
 </blockquote>
-<p>Если вы открыли новый проект, то в нем нужно выполнить перепроецирование на лету и добавить подложку. Как это сделать было описано в @ref(basemap).</p>
+<p>Если вы открыли новый проект, то в нем нужно выполнить перепроецирование на лету и добавить подложку.</p>
 <p>В результате должно получиться что-то подобное.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -316,7 +317,6 @@ Caution
 <section id="quickosm" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="quickosm"><span class="header-section-number">1.2</span> Модуль QuickOSM</h3>
 <p>Кроме непосредственного использования сервиса можно скачивать данные OSM напрямую из QGIS с помощью модуля <strong>QuickOSM</strong>.</p>
-<p>Как устанавливать модули уже было рассказано ранее в @ref(QMS).</p>
 <p><img src="images/27.png" class="img-fluid"></p>
 <p>После установки модуля на панели инструментов появятся два значка <img src="images/28.png" class="img-fluid">, левый из которых запускает окно поиска и загрузки данных из OSM, а правый позволяет удаленно подключаться к редактированию OSM через редактор JOSM<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
 <p>Окно модуля по умолчанию открывается на вкладке <strong>Быстрый запрос</strong>.</p>
@@ -324,11 +324,21 @@ Caution
 <p>Кнопка <strong>Помощью с ключами/значениями</strong> открывает страницу с документацией модуля <a href="https://docs.3liz.org/QuickOSM/" class="uri">https://docs.3liz.org/QuickOSM/</a></p>
 <p>На второй строке находятся строка выбора пресетов (<strong>Preset</strong>) - готовый запросов по поиску объектов, поэтому если вы не очень уверены в том, как какие-либо объекты обозначаются, но знаете, какие вам нужны, можно попробовать найти уже готовый запрос здесь.</p>
 <p>Сразу под этой строкой находится таблица, где вы можете выбирать конкретные ключи и их значения.</p>
-<blockquote class="blockquote">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Запрос может включать в себя сразу несколько пар ключ/значение, но в этом случае части запроса должны быть связаны одним из логических операторов <strong><em>AND</em></strong> или <strong><em>OR</em></strong>.</p>
 <p>Главное отличие в применении этих операторов состоит в том, что при выборе <strong><em>AND</em></strong> поиск объектов будет осуществляться с учетом того, что все части запроса должны <em>выполняться одновременно</em>.</p>
 <p>При использовании оператора <strong><em>OR</em></strong> будет производится поиск объектов, <em>удовлетворяющих хотя бы одному условию из заданных</em>.</p>
-</blockquote>
+</div>
+</div>
 <p>Сразу под таблицей необходимо задать область поиска:</p>
 <p><img src="images/30.png" class="img-fluid"></p>
 <ul>
@@ -339,7 +349,7 @@ Caution
 <li><p><strong>Не пространственные</strong> - не заданная конкретная область, поэтому поиск будет производиться во всех данных OSM вне зависимости от местоположения.</p></li>
 </ul>
 <p>Свой запрос вы можете сохранить в виде пресета (<strong>Save query in a new preset</strong>), просмотреть его (<strong>Показать запрос</strong>) и <strong>Выполнить запрос</strong>.</p>
-<p>При нажатии на кнопку <strong>Показать запрос</strong> у вас откроется вкладка <strong>Запрос</strong>, где текст вашего запроса будет показан на языке запросов Overpass аналогично тому, как было рассмотрено выше в @ref(overpass).</p>
+<p>При нажатии на кнопку <strong>Показать запрос</strong> у вас откроется вкладка <strong>Запрос</strong>, где текст вашего запроса будет показан на языке запросов Overpass аналогично тому, как было рассмотрено выше.</p>
 <p><img src="images/31.png" class="img-fluid"></p>
 <p>При желании, запрос можно писать прямо здесь.</p>
 <p>В пункте <strong>Query history</strong> на вкладке <strong>Быстрый запрос</strong> у вас будут отображаться уже сделанные вами запросы.</p>
@@ -350,20 +360,42 @@ Caution
 <li><p>время ожидания при выполнении запроса;</p></li>
 <li><p>путь к папке для сохранения результатов запроса и формат сохранения данных, а также префикс файла для более простой идентификации.</p></li>
 </ul>
-<blockquote class="blockquote">
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>!NB</strong> по умолчанию результаты запроса сохраняются во <em>временные слои</em>, обозначенные значком <img src="images/33.png" class="img-fluid"></p>
-<p>Эти слои <em>существуют только во время текущего сеанса работы</em>, так что если вы планируете работать с ними далее, то их необходимо сохранить. Сделать это можно, кликнув правой кнопкой мыши на название слоя и выбрав пункт <strong>Сохранить на диск</strong> или <strong>Экспорт — Сохранить объекты как…</strong></p>
+<p>Эти слои <em>существуют только во время текущего сеанса работы</em>, так что если вы планируете работать с ними далее, то их необходимо сохранить. Сделать это можно, кликнув правой кнопкой мыши на название слоя и выбрав пункт <strong>Сохранить на диск</strong> или <strong>Экспорт</strong> <span class="math inline">\(\longrightarrow\)</span> <strong>Сохранить объекты как…</strong></p>
 <p><img src="images/34.png" class="img-fluid"></p>
-</blockquote>
-<blockquote class="blockquote">
 <p>Также обратите внимание, что по одному и тому же запросу могут возвращаться объекты с разными типами геометрии, причем каждый из этих типов сохраняется в отдельный слой.</p>
-</blockquote>
+</div>
+</div>
 <p>На вкладке <strong>Map preset</strong> вы увидите существующий по умолчанию в модуле пресет Urban, а также свои сохраненные в виде пресетов запросы.</p>
 <p><img src="images/35.png" class="img-fluid"></p>
 <p>Вкладка <strong>OSM файл</strong> позволяет загружать сырые данные из OSM для их редактирования.</p>
 <p>В <strong>Параметрах</strong> вы можете выбрать конкретный сервер Overpass для соединения и сервер Nominatim<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
 <p><img src="images/36.png" class="img-fluid"></p>
 <p>Если запросы осуществляются слишком медленно или не осуществляются вообще, выбор другого сервера может помочь решить эту проблему.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>При желании более подробно ознакомиться с логикой построения запросов и языком запросов, вы можете воспользоваться интерактивным учебником <a href="https://osmlab.github.io/learnoverpass//en/" class="uri">https://osmlab.github.io/learnoverpass//en/</a></p>
+<p>Или взять уже готовые запросы из коллекции запросов <a href="https://osm-queries.ldodds.com/" class="uri">https://osm-queries.ldodds.com/</a></p>
+</div>
+</div>
 </section>
 <section id="дополнительно" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="дополнительно"><span class="header-section-number">1.3</span> Дополнительно</h3>
@@ -372,8 +404,6 @@ Caution
 <video width="540" height="360" controls="">
   <source src="images/255709707-f43a7a5e-3780-4421-a007-96afe55c683c.mp4" type="video/mp4">
 </video>
-<p>При желании более подробно ознакомиться с логикой построения запросов и языком запросов, вы можете воспользоваться интерактивным учебником <a href="https://osmlab.github.io/learnoverpass//en/" class="uri">https://osmlab.github.io/learnoverpass//en/</a></p>
-<p>Или взять уже готовые запросы из коллекции запросов <a href="https://osm-queries.ldodds.com/" class="uri">https://osm-queries.ldodds.com/</a></p>
 </section>
 <section id="исторические-данные-osm" class="level3" data-number="1.4">
 <h3 data-number="1.4" class="anchored" data-anchor-id="исторические-данные-osm"><span class="header-section-number">1.4</span> Исторические данные OSM</h3>
@@ -547,8 +577,7 @@ WHERE
   SERVICE wikibase:label {
     bd:serviceParam wikibase:language "ru" . 
   }
-}
-</code></pre>
+}</code></pre>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -656,6 +685,19 @@ Caution
 </div>
 </div>
 <iframe src="https://rutube.ru/play/embed/4a14444a2b99278f2b348ec1668d75a2/" width="720" height="405" frameborder="0" allow="clipboard-write" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Кроме среды разработки полученный результат можно отформатировать, например, онлайн-сервисами <a href="https://jsonformatter.org/">JSON Formatter</a> или <a href="https://jsonformatter.curiousconcept.com/">JSON formatter and validator</a></p>
+</div>
+</div>
 <iframe width="720" height="405" src="https://rutube.ru/play/embed/c5e7367799c24329c03edf90dfceab87/" frameborder="0" allow="clipboard-write" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
 </section>
 <section id="получение-данных-из-выписок-егрн-и-кпт" class="level3" data-number="4.2">
@@ -796,9 +838,34 @@ Warning
 </section>
 <section id="архивные-карты-городов" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="архивные-карты-городов"><span class="header-section-number">6</span> Архивные карты городов</h2>
-<p>Некоторые архивные карты городов в растровом формате можно найти на сайте <a href="https://retromap.ru/select">https://retromap.ru/select</a></p>
-<p>Архивные карты (примерно до середины двадцатого века) можно попробовать найти на сайте <a href="https://geoportal.rgo.ru/collections">https://geoportal.rgo.ru/collections</a></p>
+<p>Некоторые архивные карты городов в растровом формате можно найти на сайте <a href="https://retromap.ru/select" class="uri">https://retromap.ru/select</a></p>
+<p>Архивные карты (примерно до середины двадцатого века) можно попробовать найти на сайте <a href="https://geoportal.rgo.ru/collections" class="uri">https://geoportal.rgo.ru/collections</a></p>
 <p>Наиболее любознательные могут попробовать поискать архивные карты в <a href="https://nlr.ru/nlr_visit/RA1918/fond-kartograficheskih-izdaniy">фонде картографических изданий РНБ</a> или в каталоге <a href="https://rusneb.ru/">Национальной электронной библиотеки</a>.</p>
+</section>
+<section id="дополнительные-источники" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="дополнительные-источники"><span class="header-section-number">7</span> Дополнительные источники</h2>
+<p>В качестве дополнительных источников данных можно также использовать:</p>
+<ul>
+<li><p>сведения о точках притяжения от компании Foursquare - <a href="https://opensource.foursquare.com/os-places/"><strong>Foursquare OS Places</strong></a>(почитать про особенности скачивания данных можно по <a href="https://cartetika.ru/tpost/18251pvb41-mesta-ot-foursquare-kak-skachat-dataset">ссылке</a>);</p></li>
+<li><p>некоторые социально-экономические показатели в разрезе муниципальных образований можно взять из БД ПМО Росстата (более удобная для работы версия есть здесь: Муниципальная статистика России с 2005 года//Росстат; обработка «Если быть точным», 2024. Условия использования: Creative Commons BY 4.0. URL: <a href="https://tochno.st/datasets/bdmo" class="uri">https://tochno.st/datasets/bdmo</a>);</p></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Следует учитывать, что в этих данных очень много пробелов</p>
+</div>
+</div>
+<ul>
+<li><p>данные об экономической отчетности предприятий есть в <a href="https://github.com/irlcode/RFSD">Российской базе бухгалтерской отчетности</a> (Bondarkov, Sergey and Ledenev, Victor and Skougarevskiy, Dmitriy. arXiv preprint arXiv:2501.05841. <a href="https://doi.org/10.48550/arXiv.2501.05841" class="uri">https://doi.org/10.48550/arXiv.2501.05841</a>);</p></li>
+<li><p>Данные о границах и изменениях муниципальных образований в России для аналитики на внутрирегиональном уровне - <a href="https://sberindex.ru/ru/research/dataset-borders-and-changes-of-municipalities" class="uri">https://sberindex.ru/ru/research/dataset-borders-and-changes-of-municipalities</a> (подробнее об этом наборе можно почитать по <a href="https://habr.com/ru/companies/sberbank/articles/849682/">ссылке</a>).</p></li>
+</ul>
 
 
 </section>
