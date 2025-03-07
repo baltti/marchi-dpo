@@ -109,9 +109,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Цифровые средства градостроительного анализа
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./vectorisation.html">Векторизация растровых карт</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -159,6 +157,47 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="./remote-sensing-data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Открытые данные дистанционного зондирования</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vectorisation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Векторизация растровых карт</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Работа с данными дистанционного зондирования</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./remote-sensing-basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Основы работы с данными дистанционного зондирования в ГИС</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vegetation-indices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Расчет вегетационных индексов</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./surface-temperature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Определение температуры поверхности по космическим снимкам</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./image-classification.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Распознавание объектов на снимках</span></a>
   </div>
 </li>
       </ul>
@@ -343,7 +382,7 @@ Warning
 <h4 data-number="2.3.1" class="anchored" data-anchor-id="редактирование-формы-объектов"><span class="header-section-number">2.3.1</span> Редактирование формы объектов</h4>
 <p>Для редактирования формы объектов следует пользоваться инструментом работы с вершинами <img src="images/60.PNG" class="img-fluid"></p>
 <p><img src="images/2021-12-01-13-25-36.gif" class="img-fluid"></p>
-<p>Также для редактирования объектов есть целый ряд функций, представленных в пункте <strong>Правка</strong> <span class="math inline">\(\longrightarrrow\)</span> <strong>Редактировать геометрию</strong> строки меню.</p>
+<p>Также для редактирования объектов есть целый ряд функций, представленных в пункте <strong>Правка</strong> <span class="math inline">\(\longrightarrow\)</span> <strong>Редактировать геометрию</strong> строки меню.</p>
 <p><img src="images/61.png" class="img-fluid"></p>
 </section>
 <section id="перемещение-объекта" class="level4" data-number="2.3.2">
@@ -429,6 +468,40 @@ Tip
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>В последнем обновлении версии QGIS 3.42 появились новые функции, упрощающие отрисовку объектов<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<ul>
+<li>обрезать\вытянуть объект</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/7.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/afff864bb555fcfba93b700cf4f63c7e2eb65390.gif" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li>добавлена опция привязки объектов в геопривязке.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/5d2403406b6bf2644f6ba0d60a77364dc80b4c7b.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -466,7 +539,7 @@ Important
 <p>Страница модуля: <a href="https://plugins.qgis.org/plugins/buntinglabs-qgis-plugin/" class="uri">https://plugins.qgis.org/plugins/buntinglabs-qgis-plugin/</a></p>
 <p>Сайт модуля: <a href="https://buntinglabs.com/solutions/ai-vectorizer-qgis-plugin" class="uri">https://buntinglabs.com/solutions/ai-vectorizer-qgis-plugin</a></p>
 <p>Репозиторий с кодом: <a href="https://github.com/BuntingLabs/buntinglabs-qgis-plugin" class="uri">https://github.com/BuntingLabs/buntinglabs-qgis-plugin</a></p>
-<p>В январе 2024 года компания Bunting Labs выпустила плагин для QGIS Bunting Labs AI Vectorizer, который помогает оцифровывать растры, продолжая линии, начатые пользователем. Разработчики называют это “автозаполнением”, потому что плагин не делает всю работу сразу, а дорисовывает части линий на основе контекста, оставляя пользователю возможность в любой момент перехватить контроль.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>В январе 2024 года компания Bunting Labs выпустила плагин для QGIS Bunting Labs AI Vectorizer, который помогает оцифровывать растры, продолжая линии, начатые пользователем. Разработчики называют это “автозаполнением”, потому что плагин не делает всю работу сразу, а дорисовывает части линий на основе контекста, оставляя пользователю возможность в любой момент перехватить контроль.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Плагин <strong>AI Vectorizer</strong> работает так: когда пользователь начинает отрисовывать векторный объект, модель “смотрит” на его действия и продолжает эту линию, независимо от ее значения.</p>
 <p>Пользователь начинает оцифровывать линию или полигон по растру, и как только есть первые две вершины, маленький кусочек карты отправляется на сервер. Модель “смотрит” на нарисованный на карте отрезок и выбирает пиксели, по которым должны проходить следующие вершины, после чего плагин дорисовывает 50 следующих точек линии. Этот процесс подходит для любых линий, даже для пунктирных и тех, которые пересекают другие похожие объекты. А если плагин собьется с пути, можно просто отменить последний шаг и не терять при этом много времени.</p>
 <p>Перед работой необходимо зарегистрировать аккаунт по <a href="https://buntinglabs.com/account/register">ссылке</a>. После этого вам на указанную в форме электронную почту придет письмо для активации аккаунта.</p>
@@ -514,7 +587,8 @@ Tip
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p><strong>Плагин для AI-оцифровки растров в QGIS -</strong> <a href="https://cartetika.ru/tpost/4dta8sa621-plagin-dlya-ai-otsifrovki-rastrov-v-qgis" class="uri">https://cartetika.ru/tpost/4dta8sa621-plagin-dlya-ai-otsifrovki-rastrov-v-qgis</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><strong>Changelog for version: 3.42</strong> <a href="https://changelog.qgis.org/en/qgis/version/3.42/" class="uri">https://changelog.qgis.org/en/qgis/version/3.42/</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><strong>Плагин для AI-оцифровки растров в QGIS -</strong> <a href="https://cartetika.ru/tpost/4dta8sa621-plagin-dlya-ai-otsifrovki-rastrov-v-qgis" class="uri">https://cartetika.ru/tpost/4dta8sa621-plagin-dlya-ai-otsifrovki-rastrov-v-qgis</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
