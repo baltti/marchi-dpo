@@ -80,9 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      Цифровые средства градостроительного анализа
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-sensing-basic.html">Работа с данными дистанционного зондирования</a></li><li class="breadcrumb-item"><a href="./image-classification.html">Распознавание объектов на снимках</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -134,6 +132,47 @@ ul.task-list li input[type="checkbox"] {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vectorisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Векторизация растровых карт</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Работа с данными дистанционного зондирования</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./remote-sensing-basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Основы работы с данными дистанционного зондирования в ГИС</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vegetation-indices.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Расчет вегетационных индексов</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./surface-temperature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Определение температуры поверхности по космическим снимкам</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./image-classification.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Распознавание объектов на снимках</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -152,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./remote-sensing-basic.html">Работа с данными дистанционного зондирования</a></li><li class="breadcrumb-item"><a href="./image-classification.html">Распознавание объектов на снимках</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Распознавание объектов на снимках</h1>
 </div>
@@ -183,6 +222,24 @@ ul.task-list li input[type="checkbox"] {
 <li><p>дороги;</p></li>
 <li><p>сельскохозяйственные поля.</p></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>При сегментации изображений на них выделяют конкретные пиксели, составляющие объекты<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/900px-Segmentation.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>Подробная документация по работе с модулем приведена по <a href="https://docs.mapflow.ai/api/qgis_mapflow.html">ссылке</a>.</p>
 <p>После регистрации на платформе вы можете использовать ее напрямую в браузере или с помощью одноименного модуля для QGIS.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -324,7 +381,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>Сервис является условно бесплатным, то есть при регистрации вы получаете 250 кредитов для обработки, после их использования можно пополнять свой баланс в личном кабинете.</p>
-<p>Стоимость обработки рассчитывается по формуле<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>:</p>
+<p>Стоимость обработки рассчитывается по формуле<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:</p>
 <p><code>Стоимость = Площадь * (Стоимость обработки + Стоимость данных)</code></p>
 <table class="caption-top table">
 <colgroup>
@@ -627,9 +684,225 @@ Tip
 </figure>
 </div>
 <p>После завершения обработки результаты будут загружены в проект как векторный слой. Полученные результаты могут быть сохранены в формате <em>geojson</em>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Если вы хотите узнать про работу сервиса подробнее, то можете посмотреть вебинар с его разработчиками.</p>
+<iframe width="800" height="400" src="https://www.youtube.com/embed/D6wGKKPhSok?si=EEM__abU0up28gLG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Поподробнее почитать про модели сегментации изображений, можно по <a href="https://habr.com/ru/companies/sberdevices/articles/739352/">ссылке</a>.</p>
+</div>
+</div>
 </section>
 <section id="модуль-semi-automatic-classification-plugin" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="модуль-semi-automatic-classification-plugin"><span class="header-section-number">2</span> Модуль Semi-automatic classification plugin</h2>
+<p>Кроме сегментации изображений с использованием готовой модели также возможно распознавание объектов на основе алгоритмов классификации.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Отличие классификации от сегментации состоит в том, что здесь выделяют не конкретные объекты на снимках (как в предыдущем разделе, например, выделялись только здания или стройплощадки), а классы объектов на снимках на основе имеющихся областей с известным классом.</p>
+<p>Для классификации используют не только входной растр, но и еще набор объектов, определяющий классы.</p>
+</div>
+</div>
+<p>Главным способом осуществить классификацию изображения является использование модуля <a href="https://semiautomaticclassificationmanual.readthedocs.io/">Semi-automatic classification plugin</a>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Если вы будете устанавливать этот модуль, то рекомендую внимательно посмотреть документацию по его установке для своей системы по <a href="https://semiautomaticclassificationmanual.readthedocs.io/pl/latest/installation.html">ссылке</a>.</p>
+<p>Так для системы Windows нужно дополнительно установить библиотеки, от которых зависит работа модуля.</p>
+<p>Для этого нужно запустить консоль OSGeo4W Shell, в которой ввести команду:</p>
+<pre><code>pip3 install --upgrade remotior-sensus</code></pre>
+</div>
+</div>
+<p>После установки модуль появится в панели инструментов и в виде отдельной панели сбоку.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-07 132940.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Базовый туториал по классификации снимков на английском</p>
+<iframe width="800" height="400" src="https://www.youtube.com/embed/7SZDCFXjIbA?si=nzANhERRrclgXFSC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</div>
+</div>
+<p>На первом этапе следует создать набор каналов, который будет служить исходной информацией для классификации. Этот набор можно собрать в окне модуля, которое вызывается по кнопке <img src="images/Снимок экрана 2025-03-07 153407.png" class="img-fluid" width="29">.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-07 153457.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Новый набор каналов необходимо добавить кнопкой <em>Добавить новый набор каналов (Add new band set)</em> <img src="images/Снимок экрана 2025-03-07 153547.png" class="img-fluid">. После добавления пустого набора каналов вы можете либо добавить отдельные каналы из файлов <img src="images/Снимок экрана 2025-03-07 153608.png" class="img-fluid">, либо добавить уже открытые в вашем проекте каналы. После выбора и открытия всех нужных каналов нужно выбрать длины волн различных каналов (в выпадающем списке <em>Wavelength</em>), здесь можно выбрать готовые наборы, например, Landsat 8.</p>
+<p>Кроме того, нужно выбрать как будет сохраняться ваш набор каналов: или как виртуальный растр (<em>Create virtual raster of band set</em>), или как объединенный растр (<em>Create raster of bands</em>); после чего нажать кнопку выполнения <img src="images/Снимок экрана 2025-03-07 154254.png" class="img-fluid" width="74"> и ожидать результата.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-07 154541.png" class="img-fluid figure-img"></p>
+<figcaption>Полученный мультиспектральный снимок</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Полученный снимок будет не в естественных цветах, так как мы использовали все каналы, в том числе из невидимой глазом части спектра.</p>
+<p>Здесь можно создать любой композит, который вы посчитаете нужным.</p>
+</div>
+</div>
+<p>Для классификации необходимо создать тренировочный набор данных, на основании которого и будут определяться классы на нашем снимке.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-07 154908.png" class="img-fluid figure-img"></p>
+<figcaption>Создание нового тренировочного набора данных</figcaption>
+</figure>
+</div>
+<p>Каждый класс будет содержать в себе определенный тип объектов со своей спектральной характеристикой.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th><strong>Macroclass name</strong></th>
+<th><strong>Macroclass ID</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Water</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Built-up</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>Vegetation</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>Soil</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Тренировчоный набор данных создается вручную с использованием инструмента на панели инструментов <img src="images/Снимок экрана 2025-03-07 155629.png" class="img-fluid" width="25">. После отрисовки полигон будет отображаться в виде полупрозрачной оранжевой фигуры.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-07 160014.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Для добавления полигона в тренировочный набор данных нужно указать его <em>MC ID (идентификатор класса), MC Name (название класса), C ID (идентификатор полигона), C Name (имя полигона)</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-07 160126.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>После заполнения характеристик следует нажать кнопку добавления в набор данных <img src="images/Снимок экрана 2025-03-07 160345.png" width="30" height="25">.</p>
+<p>Таким образом следует добавить все необходимые классы.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>После того, как вы создали хотя бы один полигон для класса, можно выделять новые полигоны этого класса автоматически, с использованием <img src="images/Снимок экрана 2025-03-07 161129.png" width="23" height="27">.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-07 160944.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>После создания тренировочного набора данных, можно открыть основное окно модуля и переключиться на классификацию.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-07 161434.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Перед классификацией можно попробовать сделать предварительный просмотр результатов по нажатию на кнопку <img src="images/Снимок экрана 2025-03-07 161554.png" width="22" height="26">.</p>
+</div>
+</div>
+<p>Запуск классификации осуществляется по кнопке <img src="images/Снимок экрана 2025-03-07 161900.png" class="img-fluid" width="53">.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-07 162116.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Кроме этого модуля существует еще целый ряд других, которые предназначены для классификации:</p>
+<ul>
+<li><p><a href="https://www.orfeo-toolbox.org/CookBook/index.html">Orpheo toolbox</a>;</p></li>
+<li><p><a href="https://qgis-plugin-deepness.readthedocs.io/en/latest/">Deepness (deep neural remote sensing)</a>;</p></li>
+<li><p><a href="https://github.com/nkarasiak/dzetsaka">dzetsaka</a>.</p></li>
+</ul>
+</div>
+</div>
 
 
 </section>
@@ -638,7 +911,8 @@ Tip
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p><a href="https://ru.docs.mapflow.ai/userguides/prices.html" class="uri">https://ru.docs.mapflow.ai/userguides/prices.html</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Компьютерное зрение - <a href="https://neerc.ifmo.ru/wiki/index.php?title=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B5_%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D0%B5" class="uri">https://neerc.ifmo.ru/wiki/index.php?title=%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%BD%D0%BE%D0%B5_%D0%B7%D1%80%D0%B5%D0%BD%D0%B8%D0%B5</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://ru.docs.mapflow.ai/userguides/prices.html" class="uri">https://ru.docs.mapflow.ai/userguides/prices.html</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
