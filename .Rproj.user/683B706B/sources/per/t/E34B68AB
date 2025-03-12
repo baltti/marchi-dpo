@@ -3,7 +3,7 @@
     "path": "~/Desktop/gravity model/marchi-dpo/surface-temperature.qmd",
     "project_path": "surface-temperature.qmd",
     "type": "quarto_markdown",
-    "hash": "2220203835",
+    "hash": "1851757919",
     "contents": "",
     "dirty": false,
     "created": 1741175727353.0,
@@ -18,14 +18,14 @@
         "scrollLine": "0",
         "docOutlineVisible": "0",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "4210:7767"
+        "rmdVisualModeLocation": "90:0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1741178801,
+    "lastKnownWriteTime": 1741761677,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1741178801112,
+    "last_content_update": 1741761677045,
     "read_only": false,
     "read_only_alternatives": []
 }

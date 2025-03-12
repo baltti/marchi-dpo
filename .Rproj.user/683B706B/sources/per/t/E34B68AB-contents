@@ -25,11 +25,11 @@ format: html
 
 Чтобы исследовать температуру земной поверхности нам нужен файл с **ST_B10**. Если посмотреть на реальные данные, то можно увидеть, что числа в пикселях в данном канале совсем не похожи на реальные показатели температуры. А значит, нужно как-то преобразовать существующие данные.
 
-![](images/image (3).webp){fig-align="center"}
+![](images/image%20(3).webp){fig-align="center"}
 
 Подробное описание преобразования данных в температуру есть в [технической документации](https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/LSDS-1619_Landsat8-9-Collection2-Level2-Science-Product-Guide-v6.pdf).
 
-![](images/image (4).webp){fig-align="center"}
+![](images/image%20(4).webp){fig-align="center"}
 
 Для значений этого канала есть некий multiplicative scale factor и additive offset:
 
@@ -60,14 +60,14 @@ $$LST_{rescaled} = B\_10\_ST*0.00341802 + 149 - 273,5$$
 
 Причем вам достаточно скачать только 10 канал, прочие для расчета температуры не требуются.
 
-![](images/image (5).webp){fig-align="center"}
+![](images/image%20(5).webp){fig-align="center"}
 :::
 
 **Шаг 2. Считаем температуру**
 
 Открываем QGIS и добавляем в пустой проект наш снимок.
 
-![](images/image (6).webp){fig-align="center"}
+![](images/image%20(6).webp){fig-align="center"}
 
 Откроем калькулятор растра (*Растр* $\longrightarrow$ Калькулятор растра) и воспользуемся формулой:
 
@@ -75,7 +75,7 @@ $$LST_{rescaled} = LST*MSF+ AO - 273,5$$
 
 Вместо B_10_ST поставим наше значение из рассматриваемого растра.
 
-![](images/image (7).webp)
+![](images/image%20(7).webp)
 
 ::: callout-caution
 В калькуторе растров лучше сохранять результат не в виде временного растра, а сразу в файл, так как сохранение во временный растр может привести к ошибкам и некорректным расчетам.
@@ -83,7 +83,7 @@ $$LST_{rescaled} = LST*MSF+ AO - 273,5$$
 
 Далее при необходимости можно обрезать снимок и подобрать цветовой градиент для лучшей иллюстрации температурных аномалий.
 
-![](images/image (8).webp)
+![](images/image%20(8).webp)
 
 Что можно с этим делать:
 
