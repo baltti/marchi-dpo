@@ -366,6 +366,47 @@ Tip
 <p><img src="images/photo_2025-02-24_21-18-02.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
+<p>Так как уклон был рассчитан в градусах, а параметр пригодности для строительства задан в процентах, то пересчитаем этот параметр в градусы по формуле:</p>
+<p><span class="math display">\[
+Slope_{degree}=arctg(\dfrac{Slope_{percent}}{100})
+\]</span></p>
+<p>Полученное значение пригодности - 6 градусов.</p>
+<p>Переклассифицируем растр и выделим области пригодные или непригодные для строительства.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-12 в 12.12.49.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Обратите внимание, что здесь в дополнительных параметрах можно указать, как именно будут задаваться границы интервалов, то есть будут ли включаться в них нижний или верхний предел интервала.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-12 в 12.18.05.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>В таблице реклассификации следует ввести границы интервалов и соответствующее им значение (эти значения должны быть целочисленными.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-12 в 12.12.25.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>В результате будет получен дискретный растр с двумя значениями (или с тем количеством значений классов, которое вы указали в таблице реклассификации.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-12 в 12.21.50.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
 </section>
 <section id="экспозиция-склонов4" class="level3" data-number="1.4">
@@ -425,6 +466,51 @@ Tip
 </section>
 <section id="построение-профиля-местности" class="level3" data-number="1.8">
 <h3 data-number="1.8" class="anchored" data-anchor-id="построение-профиля-местности"><span class="header-section-number">1.8</span> Построение профиля местности</h3>
+<p>В актуальных версиях программы построения профиля местности по цифровой модели рельефа является функцией по умолчанию. Этот инструмент можно открыть из строки меню <em>Вид</em> <span class="math inline">\(\longrightarrow\)</span> <em>Профиль высот</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-12 в 13.07.28.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Окно профиля высот открывается в нижней части интерфейса. Ваша цифровая модель рельефа (если растр с ней загружен в проект должна автоматически добавиться в левую часть окна построения профиля.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-12 в 14.14.16.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Если ваша цифровая модель рельефа не добавилась в высотный профиль автоматически, то вам нужно проверить ее настройки.</p>
+<p>В свойствах слоя (открываются двойным кликом или кликом правой кнопки мыши и выбором пункта <em>Свойства</em> из открывшегося контекстного меню) необходимо найти пункт <em>Высота</em> и поставить галочку напротив настройки <em>“Представляет собой данные высоты”</em>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-12 в 14.16.24.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>После этого ваша цифровая модель будет автоматически добавлена в окно высотного профиля.</p>
+</div>
+</div>
+<p>Построение профиля может происходить двумя способами:</p>
+<ul>
+<li><p><em>Захват кривой</em> <img src="images/Снимок экрана 2025-03-12 в 14.19.51.png" width="35" height="32"> - отрисовка линии профиля осуществляется вручную прямо на карте;</p></li>
+<li><p><em>Захват кривой из объекта</em> <img src="images/Снимок экрана 2025-03-12 в 14.20.03.png" class="img-fluid" width="36"> - использование уже существующей линии из векторного слоя.</p></li>
+</ul>
+<p>В первом случае необходимо просто нарисовать нужную вам линию профиля (она может быть отрисована как любая ломаная линия), по которой будет происходить построения.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Снимок экрана 2025-03-12 в 14.22.05.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>При перемещении курсора по графику или линии профиля вы увидите перемещающуюся точку, показывающую конкретное положение.</p>
+<iframe width="800" height="400" src="images/Запись экрана 2025-03-12 в 14.24.11.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
 
 
 </section>
