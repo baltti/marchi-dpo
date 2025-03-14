@@ -22,6 +22,8 @@ website:
           - vegetation-indices.qmd
           - surface-temperature.qmd
           - image-classification.qmd
+      - text: "Анализ рельефа"
+        href: relief.qmd
           
           
 

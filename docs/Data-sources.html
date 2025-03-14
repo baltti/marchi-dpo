@@ -202,6 +202,12 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./relief.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Анализ рельефа</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -743,6 +749,8 @@ Tip
 </section>
 <section id="получение-данных-из-выписок-егрн-и-кпт" class="level3" data-number="4.2">
 <h3 data-number="4.2" class="anchored" data-anchor-id="получение-данных-из-выписок-егрн-и-кпт"><span class="header-section-number">4.2</span> Получение данных из выписок ЕГРН и КПТ</h3>
+<section id="конвертер-xml-файлов" class="level4" data-number="4.2.1">
+<h4 data-number="4.2.1" class="anchored" data-anchor-id="конвертер-xml-файлов"><span class="header-section-number">4.2.1</span> Конвертер xml-файлов</h4>
 <p>Если у вас есть выписка из ЕГРН на объект недвижимости или кадастровый план территории на кадастровый квартал в формате <em>.xml</em>, то вы можете попробовать загрузить данные из них в QGIS.</p>
 <p>Но их загрузка требует извлечения пространственной составляющей (координат характерных точек объектов недвижимости). Самый простой способ конвертации - онлайн-сервис от компании ПолигонПРО:</p>
 <ul>
@@ -802,6 +810,13 @@ Caution
 <p>Также следует помнить, что данные загружаются пользователями сервиса и могут быть уже неактуальными.</p>
 </div>
 </div>
+</section>
+<section id="конвертация-данных-егрн" class="level4" data-number="4.2.2">
+<h4 data-number="4.2.2" class="anchored" data-anchor-id="конвертация-данных-егрн"><span class="header-section-number">4.2.2</span> Конвертация данных ЕГРН</h4>
+<p>Также конвертацию документов, полученных из ЕГРН позволяет осуществить сервис от компании NextGIS - <a href="https://toolbox.nextgis.com/t/import_egrn">Конвертация данных ЕГРН</a>.</p>
+<iframe width="720" height="405" src="https://rutube.ru/play/embed/5255ec9b95e6f34d0e5d4ceb8fb20f82/" frameborder="0" allow="clipboard-write; autoplay" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p>Преимуществом данного сервиса является то, что он может осуществлять подбор системы координат самостоятельно.</p>
+</section>
 </section>
 <section id="подключение-национальной-системы-пространственных-данных-в-качестве-подложки" class="level3" data-number="4.3">
 <h3 data-number="4.3" class="anchored" data-anchor-id="подключение-национальной-системы-пространственных-данных-в-качестве-подложки"><span class="header-section-number">4.3</span> Подключение национальной системы пространственных данных в качестве подложки</h3>
